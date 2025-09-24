@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.title("🏡 House Price Predictor")
+st.title("House Price Predictor")
 
 overall_qual = st.slider("Overall Quality (1-10)", 1, 10, 5)
 gr_liv_area = st.number_input("Above ground living area (sq ft)", 500, 5000, 1500)
@@ -20,6 +20,6 @@ if st.button("Predict Price"):
     response = requests.post("http://api:8000/predict", json=payload)
     if response.status_code == 200:
         result = response.json()
-        st.success(f"💰 Predicted Price: ${result['prediction']}")
+        st.success(f"Predicted Price: ${result['prediction']}")
     else:
         st.error("API request failed!")

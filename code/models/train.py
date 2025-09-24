@@ -30,4 +30,4 @@ model = Pipeline([
 model.fit(X_train, y_train)
 
 joblib.dump(model, "../../models/house_price_model.pkl")
-print("✅ Model trained and saved!")
+print("Model trained and saved")
